@@ -1,8 +1,10 @@
 const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("button");
+const searchForm = document.getElementById("searchForm");
 const results = document.getElementById("content");
 
-async function search() {
+async function search(event) {
+	event.preventDefault();
+
 	if (!searchInput.value) {
 		results.innerHTML = "Escriba un país para buscar";
 		return;
@@ -38,12 +40,8 @@ async function search() {
 	removeLoading();
 }
 
-searchButton.addEventListener("click", search);
-searchInput.addEventListener("keydown", (event) => {
-	if (event.key === "Enter") {
-		search();
-	}
-});
+searchForm.addEventListener("submit", search);
+
 function showLoading() {
 	results.innerHTML = "";
 	const spinner = document.createElement("div");

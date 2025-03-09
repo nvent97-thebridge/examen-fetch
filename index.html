@@ -9,14 +9,14 @@
 	<body>
 		<h1>Buscador de paises</h1>
 		<div class="inputs">
-			<input
-				type="search"
-				name="search"
-				id="searchInput"
-				placeholder="Busca el país..."
-				autofocus
-			/>
-			<button id="button">Buscar</button>
+			<form id="searchForm">
+				<input
+					type="search"
+					id="searchInput"
+					placeholder="Escriba un país"
+				/>
+				<button type="submit" id="button">Buscar</button>
+			</form>
 		</div>
 		<div id="content"></div>
 		<script src="script.js"></script>
